@@ -22,3 +22,14 @@ side_a,side_b,side_c=float(input("enter side A ")), float(input("enter side B ")
 
 perimeter_of_triangle=(side_a+side_b+side_c)
 print("Perimeter of Triangle is ", perimeter_of_triangle)
+
+
+#Get length and width of a rectangle using prompt. Calculate its area (area = length x width) and perimeter (perimeter = 2 x (length + width))
+
+length_of_rectangle,width_of_rectangle=float(input("ENter length ")), float(input("enter width "))
+
+area_of_rectangle=(length_of_rectangle*width_of_rectangle)
+
+perimeter_of_rectangle=(2*(length_of_rectangle + width_of_rectangle))
+
+print(f"area of rectangle is {area_of_rectangle} , and perimeter of rectangle is  {perimeter_of_rectangle}") 
