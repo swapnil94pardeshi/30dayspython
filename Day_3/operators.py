@@ -1,3 +1,5 @@
+'''
+
 #Declare your age as integer variable
 
 age=int(10)
@@ -33,3 +35,49 @@ area_of_rectangle=(length_of_rectangle*width_of_rectangle)
 perimeter_of_rectangle=(2*(length_of_rectangle + width_of_rectangle))
 
 print(f"area of rectangle is {area_of_rectangle} , and perimeter of rectangle is  {perimeter_of_rectangle}") 
+
+
+
+#Get radius of a circle using prompt. Calculate the area (area = pi x r x r) and circumference (c = 2 x pi x r) where pi = 3.14.
+
+radius_of_circle=float(input("enter radius of circle "))
+
+area_of_circle=3.14*radius_of_circle**2
+circumference_of_circle=2*3.14*radius_of_circle
+
+print(f"area of circle is {area_of_circle} and circumference of circle is {circumference_of_circle}")
+
+
+#Calculate the slope, x-intercept and y-intercept of y = 2x -2
+
+equation = "y = 2x - 2"
+
+equation_parts = equation.split("=")
+
+print(equation_parts)
+
+y_part, mx_part = equation_parts
+
+print(y_part,mx_part)
+
+m_coefficient, x_term = mx_part.split("x")
+
+print(m_coefficient,x_term)
+
+m = float(m_coefficient.strip())
+b = float(x_term.strip().split("-")[-1])
+
+print(m,b)
+
+x_intercept = -b / m
+print(x_intercept)
+
+'''
+#Slope is (m = y2-y1/x2-x1). Find the slope and Euclidean distance between point (2, 2) and point (6,10)
+import math
+point1 = (2, 2)
+point2 = (6, 10)
+
+slope = (point2[1] - point1[1]) / (point2[0] - point1[0])
+euclidean_distance = math.dist((2, 2), (6,10))
+print(euclidean_distance, slope)
