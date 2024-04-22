@@ -72,7 +72,7 @@ print(m,b)
 x_intercept = -b / m
 print(x_intercept)
 
-'''
+
 #Slope is (m = y2-y1/x2-x1). Find the slope and Euclidean distance between point (2, 2) and point (6,10)
 import math
 point1 = (2, 2)
@@ -81,3 +81,12 @@ point2 = (6, 10)
 slope = (point2[1] - point1[1]) / (point2[0] - point1[0])
 euclidean_distance = math.dist((2, 2), (6,10))
 print(euclidean_distance, slope)
+'''
+#Calculate the value of y (y = x^2 + 6x + 9). Try to use different x values and figure out at what x value y is going to be 0.
+
+x=(-5,-4,-3,-2,-1,0,1,2,3,4,5)
+
+for value in x:
+    y=value*value + 6*value + 9
+    if y==0:
+        print(value)
