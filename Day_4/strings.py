@@ -192,3 +192,76 @@ else:
 trimstring='   Coding For All      '
 trimstring=trimstring.strip()
 print(trimstring)
+
+#Which one of the following variables return True when we use the method isidentifier():
+#30DaysOfPython
+#thirty_days_of_python
+
+string1=["30DaysOfPython","thirty_days_of_python"]
+for word in string1:
+    if word.isidentifier():
+        print(f"{word}  is an identifier")
+    else: 
+        print(f"{word}  is not identifier")
+
+
+# The following list contains the names of some of python libraries: ['Django', 'Flask', 'Bottle', 'Pyramid', 'Falcon']. Join the list with a hash with space string.
+
+pythonlibrary=['Django', 'Flask', 'Bottle', 'Pyramid', 'Falcon']
+pythonlibrary.append('Hash')
+print(pythonlibrary)
+
+# Use the new line escape sequence to separate the following sentences.
+#I am enjoying this challenge.
+#I just wonder what is next.
+separatesequence="I am enjoying this challenge. \n I just wonder what is next."
+
+print(separatesequence)
+
+#Use a tab escape sequence to write the following lines.
+#Name      Age     Country   City
+#Asabeneh  250     Finland   Helsinki
+
+print("Name\t\tAge\tCountry\t\tCity\nAsabeneh\t250\tFinland\t\tHelsinki")
+
+#Use the string formatting method to display the following:
+#radius = 10
+#area = 3.14 * radius ** 2
+#The area of a circle with radius 10 is 314 meters square.
+
+print(f"radius = 10\narea = 3.14 * radius **2\nThe area of a circle with radius 10 is 314 meters square")
+
+#Make the following using string formatting methods:
+#8 + 6 = 14
+#8 - 6 = 2
+#8 * 6 = 48
+#8 / 6 = 1.33
+#8 % 6 = 2
+#8 // 6 = 1
+#8 ** 6 = 262144
+
+#print(f"{8 + 6 = 14}\n{8 - 6 = 2}\n{8 * 6 = 48}\n{8 / 6 = 1.33}\n{8 % 6 = 2}\n{8 // 6 = 1}\n{8 ** 6 = 262144}")
+
+num1 = 8
+num2 = 6
+
+# Addition
+print(f"{num1} + {num2} = {num1 + num2}")
+
+# Subtraction
+print(f"{num1} - {num2} = {num1 - num2}")
+
+# Multiplication
+print(f"{num1} * {num2} = {num1 * num2}")
+
+# Division with two decimal places
+print(f"{num1} / {num2} = {num1 / num2:.2f}")
+
+# Modulo
+print(f"{num1} % {num2} = {num1 % num2}")
+
+# Floor division
+print(f"{num1} // {num2} = {num1 // num2}")
+
+# Exponentiation
+print(f"{num1} ** {num2} = {num1 ** num2}")
