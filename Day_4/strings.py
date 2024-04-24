@@ -138,3 +138,57 @@ print(indexf)
 
 indexl=nameabbr.rfind("L")
 print(indexl)
+
+# Use index or find to find the position of the first occurrence of the word 'because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
+
+sentence='You cannot end a sentence with because because because is a conjunction'
+occurbecuase=sentence.index("because")
+occurbecuase1=sentence.find("because")
+
+print(occurbecuase)
+print(occurbecuase1)
+
+#Use rindex to find the position of the last occurrence of the word because in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
+
+sentence='You cannot end a sentence with because because because is a conjunction'
+
+occurbecuasee=sentence.rindex("because")
+
+print(occurbecuasee)
+
+
+#Slice out the phrase 'because because because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
+
+sentence='You cannot end a sentence with because because because is a conjunction'
+startindex=sentence.find("because")
+endindex=sentence.find("is")
+slicedsentence=sentence[startindex:endindex]
+
+print(slicedsentence)
+
+
+#Find the position of the first occurrence of the word 'because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
+print(startindex)
+
+
+#Does ''Coding For All' start with a substring Coding?
+
+string="Coding For ALL"
+substring=string.split(" ")
+if substring[0] == "Coding":
+    print("Substring is Matched")
+else:
+    print("substring does not matched")
+
+#Does 'Coding For All' end with a substring coding?
+string="Coding For ALL"
+substring=string.split(" ")
+if substring[-1] == "Coding":
+    print("Substring is Matched")
+else:
+    print("substring does not matched")
+
+#'   Coding For All      '  , remove the left and right trailing spaces in the given string.
+trimstring='   Coding For All      '
+trimstring=trimstring.strip()
+print(trimstring)
