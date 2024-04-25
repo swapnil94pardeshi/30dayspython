@@ -1,4 +1,4 @@
-fruits = ['banana', 'orange', 'mango', 'lemon']                     # list of fruits
+'''fruits = ['banana', 'orange', 'mango', 'lemon']                     # list of fruits
 vegetables = ['Tomato', 'Potato', 'Cabbage','Onion', 'Carrot']      # list of vegetables
 animal_products = ['milk', 'meat', 'butter', 'yoghurt']             # list of animal products
 web_techs = ['HTML', 'CSS', 'JS', 'React','Redux', 'Node', 'MongDB'] # list of web technologies
@@ -160,3 +160,95 @@ index= full_stack.index("Redux")
 full_stack.insert(index+1, "Python")
 full_stack.insert(index+2,"SQL")
 print(full_stack)
+
+'''
+#The following is a list of 10 students ages:
+
+ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+
+ages.sort()
+ages_min=min(ages)
+ages_max=max(ages)
+
+#Add the min age and the max age again to the list
+
+ages.append(ages_min)
+ages.append(ages_max)
+
+print(ages)
+
+# Find the median age (one middle item or two middle items divided by two)
+import statistics
+median=statistics.median(ages)
+print(median)
+
+#Find the average age (sum of all items divided by their number )
+
+average=sum(ages) / len(ages)
+
+print(average)
+
+
+# Find the range of the ages (max minus min)
+
+range_ages=ages_max-ages_min
+
+print(range_ages)
+
+
+# Compare the value of (min - average) and (max - average), use abs() method
+
+difference1 = abs(ages_min - average)
+difference2 = abs(ages_max - average)
+
+larger_difference = max(difference1, difference2)
+
+print(f"The larger absolute difference between (min - average) and (max - average) is: {larger_difference} years")
+
+
+
+
+
+countries = [  'Afghanistan',  'Albania',  'Algeria',  'Andorra',  'Angola',  'Antigua and Barbuda',  'Argentina',  'Armenia',  'Australia',  'Austria',  'Azerbaijan',  'Bahamas',  'Bahrain',  'Bangladesh',
+  'Barbados',  'Belarus',  'Belgium',  'Belize',  'Benin',  'Bhutan',  'Bolivia',  'Bosnia and Herzegovina',
+  'Botswana',  'Brazil',  'Brunei',  'Bulgaria',  'Burkina Faso',  'Burundi',  'Cambodia',  'Cameroon',
+  'Canada',  'Cape Verde',  'Central African Republic',  'Chad',  'Chile',  'China',  'Colombi',  'Comoros',
+  'Congo (Brazzaville)',  'Congo',  'Costa Rica',  "Cote d'Ivoire",  'Croatia',  'Cuba',  'Cyprus',  'Czech Republic',  'Denmark',  'Djibouti',  'Dominica',  'Dominican Republic',  'East Timor (Timor Timur)',
+  'Ecuador',  'Egypt',  'El Salvador',  'Equatorial Guinea',  'Eritrea',  'Estonia',  'Ethiopia',  'Fiji',
+  'Finland',  'France',  'Gabon',  'Gambia, The',  'Georgia',  'Germany',  'Ghana',  'Greece',  'Grenada',
+  'Guatemala',  'Guinea',  'Guinea-Bissau',  'Guyana',  'Haiti',  'Honduras',  'Hungary',  'Iceland',
+  'India',  'Indonesia',  'Iran',  'Iraq',  'Ireland',  'Israel',  'Italy',  'Jamaica',  'Japan',  'Jordan',
+  'Kazakhstan',  'Kenya',  'Kiribati',  'Korea, North',  'Korea, South',  'Kuwait',  'Kyrgyzstan',  'Laos',
+  'Latvia',  'Lebanon',  'Lesotho',  'Liberia',  'Libya',  'Liechtenstein',  'Lithuania',  'Luxembourg',
+  'Macedonia',  'Madagascar',  'Malawi',  'Malaysia',  'Maldives',  'Mali',  'Malta',  'Marshall Islands',
+  'Mauritania',  'Mauritius',  'Mexico',  'Micronesia',  'Moldova',  'Monaco',  'Mongolia',  'Morocco',
+  'Mozambique',  'Myanmar',  'Namibia',  'Nauru',  'Nepal',  'Netherlands',  'New Zealand',  'Nicaragua',
+  'Niger',  'Nigeria',  'Norway',  'Oman',  'Pakistan',  'Palau',  'Panama',  'Papua New Guinea',
+  'Paraguay',  'Peru',  'Philippines',  'Poland',  'Portugal',  'Qatar',  'Romania',  'Russia',  'Rwanda',
+  'Saint Kitts and Nevis',  'Saint Lucia',  'Saint Vincent',  'Samoa',  'San Marino',  'Sao Tome and Principe',
+  'Saudi Arabia',  'Senegal',  'Serbia and Montenegro',  'Seychelles',  'Sierra Leone',  'Singapore',
+  'Slovakia',  'Slovenia',  'Solomon Islands',  'Somalia',  'South Africa',  'Spain',  'Sri Lanka',
+  'Sudan',  'Suriname',  'Swaziland',  'Sweden',  'Switzerland',  'Syria',  'Taiwan',  'Tajikistan',
+  'Tanzania',  'Thailand',  'Togo',  'Tonga',  'Trinidad and Tobago',  'Tunisia',  'Turkey',  'Turkmenistan',
+  'Tuvalu',  'Uganda',  'Ukraine',  'United Arab Emirates',  'United Kingdom',  'United States',  'Uruguay',
+  'Uzbekistan',  'Vanuatu',  'Vatican City',  'Venezuela',  'Vietnam',  'Yemen',  'Zambia',  'Zimbabwe',]
+
+#Find the middle country(ies) in the countries list
+
+middle_countires = countries [int(len(countries)/2)]
+print(middle_countires)
+
+print(len(countries))
+
+countries1=countries[0:(int(len(countries)/2))+ 1]
+countries2=countries[(int(len(countries)/2))+ 1: ]
+
+print(len(countries1))
+print(len(countries2))
+
+
+#['China', 'Russia', 'USA', 'Finland', 'Sweden', 'Norway', 'Denmark']. Unpack the first three countries and the rest as scandic countries.
+
+first_countries = ['China', 'Russia', 'USA', 'Finland', 'Sweden', 'Norway', 'Denmark']
+scandic_countries=first_countries[3:]
+print(scandic_countries)
