@@ -1,4 +1,5 @@
 import os
+
 '''#Iterate 0 to 10 using for loop, do the same using while loop.
 print("________________________________________________________")
 for number in range(10):
@@ -121,13 +122,25 @@ for num in range(0,101):
         addallodd+=num
 print(addalleven)
 print(addallodd)
-'''
+
 
 
 #Go to the data folder and use the countries.py file. Loop through the countries and extract all the countries containing the word land.
 
-import data.countries as c
+import countries
 
-countries_with_land = [country for country in c.countries if "land" in country.lower()]
+# Loop through all the countries
+for country in countries.countries:
+    # Check if the country name contains the word 'land'
+    if 'land' in country.name.lower():
+        print(country.name)
+'''
 
 
+
+#This is a fruit list, ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop.
+lst = ['banana', 'orange', 'mango', 'lemon']
+reversed_fruits = []
+for fruits in lst[::-1]:
+    reversed_fruits.append(fruits)
+print(reversed_fruits)
