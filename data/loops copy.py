@@ -125,9 +125,24 @@ print(addallodd)
 
 
 #Go to the data folder and use the countries.py file. Loop through the countries and extract all the countries containing the word land.
+print (os.getcwd())
+try:
+  from countries import countries  # Attempt to import the file
+except ImportError:
+  print("Error: Could not import countries.py. Please check the file path and structure.")
+else:
+  # Filter countries containing "land" (case-insensitive)
+  countries_with_land = [country for country in countries if "land" in country.lower()]
 
-import data.countries as c
+  # Print the extracted countries
+  print("Countries containing 'land':")
+  for country in countries_with_land:
+    print(country)
 
-countries_with_land = [country for country in c.countries if "land" in country.lower()]
 
+#countries_with_land = [country.lower() for country in countries.countries if "land" in country.lower()]
 
+#print(countries_with_land)
+#for country in countries.countries:
+ #   if "land" in country:
+  #      print(country)
