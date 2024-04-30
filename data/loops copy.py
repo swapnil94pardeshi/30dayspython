@@ -146,3 +146,14 @@ else:
 #for country in countries.countries:
  #   if "land" in country:
   #      print(country)
+
+
+
+from data.countries_data import countries
+
+# Finding the ten most populated countries
+most_populated_countries = sorted(countries, key=lambda x: x['population'], reverse=True)[:10]
+
+print("Ten most populated countries in the world:")
+for country in most_populated_countries:
+    print(country['name'], "-", country['population'])

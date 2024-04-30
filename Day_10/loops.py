@@ -124,17 +124,26 @@ print(addalleven)
 print(addallodd)
 
 
-
+'''
 #Go to the data folder and use the countries.py file. Loop through the countries and extract all the countries containing the word land.
 
-import countries
+import sys
+import os
 
-# Loop through all the countries
-for country in countries.countries:
-    # Check if the country name contains the word 'land'
-    if 'land' in country.name.lower():
-        print(country.name)
-'''
+# Inside main.py
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data')))
+
+
+from countries import countries
+
+# Loop through the countries and extract those containing the word "land"
+countries_with_land = [country for country in countries if "land" in country.lower()]
+
+# Print the countries containing "land"
+for country in countries_with_land:
+    print(country)
+
 
 
 
@@ -144,3 +153,34 @@ reversed_fruits = []
 for fruits in lst[::-1]:
     reversed_fruits.append(fruits)
 print(reversed_fruits)
+
+
+
+# Go to the data folder and use the countries_data.py file.
+#What are the total number of languages in the data
+#Find the ten most spoken languages from the data
+#Find the 10 most populated countries in the world
+
+# Assuming countries_data.py defines a list of countries (Case 1)
+# Or a dictionary with country data (Case 2)
+
+# Inside main.py
+
+# Importing countries data from countries_data.py file in the data folder
+
+
+
+
+# Inside main.py
+
+# Importing countries data from countries_data.py file in the data folder
+from data.countries_data import countries
+
+# Finding the ten most populated countries
+most_populated_countries = sorted(countries, key=lambda x: x['population'], reverse=True)[:10]
+
+print("Ten most populated countries in the world:")
+for country in most_populated_countries:
+    print(country['name'], "-", country['population'])
+
+
