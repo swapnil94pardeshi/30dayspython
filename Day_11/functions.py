@@ -171,7 +171,7 @@ def sum_of_odds(start_no,end_no):
     return addall
 
 print(sum_of_odds(2,100))
-'''
+
 
 #Declare a function named sum_of_even. It takes a number parameter and it adds all the even numbers in that - range.
 
@@ -183,3 +183,167 @@ def sum_of_even(start_no,end_no):
     return addall
 
 print(sum_of_even(2,101))
+
+
+
+#Declare a function named evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
+    #print(evens_and_odds(100))
+    # The number of odds are 50.
+    # The number of evens are 51.
+
+def evens_and_oddss(num):
+    oddnum=0
+    evennum=0
+    for i in range(0,num):
+        if i % 2 ==0:
+            evennum+=1
+        else:
+            oddnum+=1
+    return evennum,oddnum
+
+print(evens_and_oddss(100))
+
+
+#Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
+
+
+def factorial(num):
+    fact = 1
+    for i in range(1,num+1):
+        fact*=i
+    return fact
+
+print(factorial(5))
+
+
+#Call your function is_empty, it takes a parameter and it checks if it is empty or not
+
+def is_empty(data):
+    if not data:
+        return True
+    else:
+        return False
+
+#Write different functions which take lists. They should calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation).
+
+def calculate_mean(lst):
+    addall=0
+    for num in lst:
+        addall+=num
+    mean=addall/len(lst)
+
+    return mean
+
+def calculate_median(lst):
+    lst.sort()
+    middle=len(lst) // 2
+
+    if len(lst)%2==0:
+        median=lst[middle-1] + lst[middle] /2
+    else:
+        median=lst[middle]
+    
+    return median
+
+from collections import Counter
+
+def calculate_mode(lst):
+    counts=Counter(lst)
+    print(counts)
+    max_frequency=max(counts.values())
+
+    modes=[]
+
+    for number,frequency in counts.items():
+        if frequency ==max_frequency:
+            modes.append(lst)
+    
+    return modes
+
+def calculate_range(lst):
+    if not lst:
+        return "list is empty"
+    
+    max_value=max(lst)
+    min_value=min(lst)
+
+    range_value=max_value-min_value
+
+    return range_value
+
+def calculate_var(lst):
+    if not lst:
+        return "list is empty"
+    
+    mean=calculate_mean(lst)
+
+    squared_diffs = [(x - mean) ** 2 for x in lst]
+
+    variance = sum(squared_diffs) / len(lst)
+
+    return variance
+
+import math
+
+
+def calculate_std(lst):
+    if not lst:
+        return "list is empty"
+    
+    variance=calculate_var(lst)
+
+    stddeviation=math.sqrt(variance)
+
+    return stddeviation
+
+
+lst = [4, 8, 6, 2, 10]
+
+print(calculate_mean(lst))
+print(calculate_median(lst))
+print(calculate_mode(lst))
+print(calculate_range(lst))
+print(calculate_var(lst))
+print(calculate_std(lst))
+'''
+
+#Write a function called is_prime, which checks if a number is prime.
+
+def is_prime(num):
+    if num <= 1:
+        return False
+    
+    for i in range(2,int(num**0.5)+1):
+        if num % i ==0:
+            return False
+    return True
+
+
+print(is_prime(2))
+
+#Write a functions which checks if all items are unique in the list.
+
+lst = [4, 8, 6,6, 2, 10,"h"]
+
+def isunique(lst):
+    unique_set = set(lst)
+
+    return len(unique_set) == len(lst)
+print(isunique(lst))
+
+
+#Write a function which checks if all the items of the list are of the same data type.
+
+def checktype(lst):
+    if not lst:
+        return True
+    data_type=type(lst[0])
+
+    for i in lst[1:]:
+        if type(i) != data_type:
+            return False
+        
+    
+    return True
+
+print(checktype(lst))
