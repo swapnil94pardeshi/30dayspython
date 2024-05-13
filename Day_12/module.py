@@ -1,7 +1,7 @@
 #Writ a function which generates a six digit/character random_user_id.
   #print(random_user_id());
   #'1ee33d'
-from random import random, randint
+#from random import random, randint
 
 """def random_user_id():
     id=randint(100000,999999)
@@ -92,7 +92,7 @@ print(colors)
 
 # Write a function generate_colors which can generate any number of hexa or rgb colors.
 
-def generate_colors(color):
+#def generate_colors(color):
   """Generates a list of random colors based on the specified type (hexa or rgb).
 
   Args:
@@ -100,12 +100,12 @@ def generate_colors(color):
 
   Returns:
       list: A list of random color codes (strings).
-  """
+  
 
   # Inner functions for generating hexa and rgb colors
   if color == "hexa":
     def list_of_hexa_colors(num_colors):
-      """Generates a list of random hexadecimal color codes."""
+     Generates a list of random hexadecimal color codes.
       color_list = []
       for _ in range(num_colors):
         hex_code = "#" + ''.join(random.choices("0123456789abcdef", k=6))
@@ -114,7 +114,7 @@ def generate_colors(color):
 
   elif color == "rgb":
     def list_of_rgb_colors(num_colors):
-      """Generates a list of random RGB color codes."""
+      Generates a list of random RGB color codes.
       color_list = []
       for _ in range(num_colors):
         r = random.randint(0, 255)
@@ -129,8 +129,30 @@ def generate_colors(color):
 
   # Call the appropriate inner function based on the input color
   if color in ("hexa", "rgb"):
-    return globals()[color]()  # Call the function dynamically using its name
+        return globals()[color]()  # Call the function dynamically using its name
 
 # Example usage (without input):
 colors = generate_colors("rgb")
 print(colors)  # Output: (Example) ['rgb(12, 153, 101)', 'rgb(229, 57, 115)', ...]
+"""
+
+
+
+#Write a function which returns an array of seven random numbers in a range of 0-9. All the numbers must be unique.
+
+  import random
+
+  def generate_unique_random_numbers():
+    # Create an empty set to store unique numbers
+    unique_numbers = set()
+
+    # Generate random numbers until we have 7 unique ones
+    while len(unique_numbers) < 7:
+        unique_numbers.add(random.randint(0, 9))
+
+    # Convert the set to a list and return
+    return list(unique_numbers)
+
+# Example usage:
+  random_numbers = generate_unique_random_numbers()
+  print(random_numbers)
