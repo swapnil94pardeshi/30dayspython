@@ -127,3 +127,47 @@ def last_ten_countries():
 
 print(last_ten_countries())
 
+
+
+#Use the countries_data.py (https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries-data.py) file and follow the tasks below:
+#Sort countries by name, by capital, by population
+#Sort out the ten most spoken languages by location.
+#Sort out the ten most populated countries.
+
+import countries_data
+
+countries_sorted_by_name = sorted(countries_data.countries21, key=lambda x: x['name'])
+
+print("Countries sorted by name:")
+for country in countries_sorted_by_name:
+    print(country['name'])
+
+
+countries_sorted_by_capital = sorted(countries_data.countries21, key=lambda x: x['capital'])
+
+print("\nCountries sorted by capital:")
+for country in countries_sorted_by_capital:
+    print(country['name'], "-", country['capital'])
+
+# Sort countries by population
+countries_sorted_by_population = sorted(countries_data.countries21, key=lambda x: x['population'], reverse=True)
+
+print("\nCountries sorted by population:")
+for country in countries_sorted_by_population:
+    print(country['name'], "-", country['population'])
+
+
+languages_spoken = {}
+for country in countries_data.countries21:
+    for language in country['languages']:
+        languages_spoken[language] = languages_spoken.get(language, 0) + 1
+
+top_spoken_languages = sorted(languages_spoken.items(), key=lambda x: x[1], reverse=True)[:10]
+
+print(top_spoken_languages)
+
+
+top_populated_countries = sorted(countries_data.countries21, key=lambda x: x['population'], reverse=True)[:10]
+
+print(top_populated_countries)
+
