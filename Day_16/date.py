@@ -35,3 +35,4 @@ print(new_year-current_date)
 
 datetocal=("1 January 1970")
 print(current_date-(datetime.strptime(datetocal,"%d %B %Y")))
+
