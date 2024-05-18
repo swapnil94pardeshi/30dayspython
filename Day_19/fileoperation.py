@@ -193,7 +193,7 @@ def find_most_common_words(input_data,number_of_words):
 result = find_most_common_words('D:/Python/30day/data/obama_speech.txt', 10)
 print(result)
 
-'''
+
 
 #Write a python application that checks similarity between two texts. It takes a file or a string as a parameter and it will evaluate the similarity of the two texts. For instance check the similarity between the transcripts of Michelle's and Melina's speech. You may need a couple of functions, function to clean the text(clean_text), function to remove support words(remove_support_words) and finally to check the similarity(check_text_similarity). List of stop words are in the data directory
 
@@ -253,3 +253,85 @@ text2 = read_file(text_file_path2)
 # Check similarity
 similarity = check_text_similarity(text1, text2, stop_words)
 print(f"Similarity between the two texts: {similarity:.2f}")
+
+
+
+
+#Find the 10 most repeated words in the romeo_and_juliet.txt
+
+
+import re
+from collections import Counter
+
+def find_most_common_words(input_data,number_of_words):
+    def process_text(text):
+        # Convert to lowercase
+        text = text.lower()
+        # Remove punctuation using regex
+        text = re.sub(r'[^\w\s]', '', text)
+        # Split text into words
+        words = text.split()
+        return words
+    
+    if isinstance(input_data, str) and input_data.endswith('.txt'):
+        # Read the file content
+        with open(input_data, 'r', encoding='utf-8') as file:
+            text = file.read()
+    else:
+        # Use the input_data as text directly
+        text = input_data
+     # Process the text to get words
+    words = process_text(text)
+    
+    # Count the frequency of each word
+    word_counts = Counter(words)
+    
+    # Get the most common words
+    most_common = word_counts.most_common(number_of_words)
+    
+    return [(count, word) for word, count in most_common]
+
+
+result = find_most_common_words('D:/Python/30day/data/romeo_and_juliet.txt', 10)
+print(result)
+
+
+'''
+
+
+#Read the hacker news csv file and find out: a) Count the number of lines containing python or Python b) Count the number lines containing JavaScript, javascript or Javascript c) Count the number lines containing Java and not JavaScript
+
+import csv
+
+def count_keywords_in_csv(csv_file_path, keyword1, keyword2=None):
+    count_keyword1 = 0
+    count_keyword2 = 0
+
+    with open(csv_file_path, 'r', encoding='utf-8') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            title = row['title'].lower()
+            if keyword1.lower() in title:
+                count_keyword1 += 1
+            if keyword2 and keyword2.lower() in title:
+                count_keyword2 += 1
+
+    return count_keyword1, count_keyword2
+
+# CSV file path
+csv_file_path = 'D:/Python/30day/data/hacker_news.csv'
+
+# Part (a): Count lines containing Python or python
+python_count, _ = count_keywords_in_csv(csv_file_path, 'python')
+
+# Part (b): Count lines containing JavaScript, javascript, or Javascript
+javascript_count, _ = count_keywords_in_csv(csv_file_path, 'javascript', 'javascript')
+
+# Part (c): Count lines containing Java and not JavaScript
+java_count, _ = count_keywords_in_csv(csv_file_path, 'java', 'javascript')
+
+print(f"Number of lines containing Python: {python_count}")
+print(f"Number of lines containing JavaScript: {javascript_count}")
+print(f"Number of lines containing Java and not JavaScript: {java_count}")
+
+
