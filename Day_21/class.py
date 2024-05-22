@@ -82,3 +82,4 @@ person.add_expense(1500, "Rent")
 person.add_expense(200, "Groceries")
 
 print(person.account_info())
+print("completed")
